@@ -24,7 +24,7 @@ const ArrayLists = Java.type("java.util.ArrayList");
 const noghostblock = ["minecraft:stone_button","minecraft:chest","minecraft:bed","minecraft:trapped_chest","minecraft:lever","minecraft:skull","minecraft:command_block"];
 const noscaffoldblock = ["minecraft:air","minecraft:stone_button","minecraft:chest","minecraft:trapped_chest","minecraft:skull"];
 const scaffoldblocks = ["Wool", "Stone", "Planks", "Sand", "Sponge"];
-const getVersion = () => JSON.parse(FileLib.read("Mushroom", "metadata.json")).version
+const getVersion = () => JSON.parse(FileLib.read("FunnyDeath", "metadata.json")).version
 const getPlayerHead = (playername) => {
     let player = World.getPlayerByName(playername)
     if (!player) return

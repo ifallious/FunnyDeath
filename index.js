@@ -2,7 +2,9 @@ import Config from "././Config/Config"
 import {prefix, mc} from "./Code/Utils"
 
 const ChatComponentText = Java.type("net.minecraft.util.ChatComponentText");
-register("chat", (ripbozo, eitherwereorwas, killedby) => {
+register("chat", (ripbozo, eitherwereorwas, killedby, mob) => {
+    let fullMessage = ChatLib.getChatMessage(gamer).toLowerCase();
+    if (fullMessage.indexOf("became a ghost.") == -1)
     let deathmessage = Config.toxicdeathmessage.replace("player", ripbozo)
     if (ripbozo !== "You") {
 
@@ -10,8 +12,9 @@ register("chat", (ripbozo, eitherwereorwas, killedby) => {
     else {
         DisplayScreen()
     }
+
 }
-).setCriteria(" ☠ ${ripbozo} w${eitherwereorwas} ${killedby} by Voidgloom Seraph.")
+).setCriteria(" ☠ ${ripbozo} w${eitherwereorwas} ${killedby} ${mob}.")
 
 function DisplayScreen(){
     CheatTempBan(getTime())
